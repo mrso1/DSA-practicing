@@ -1,28 +1,30 @@
-class Stack:
+class Queue:
     def __init__(self):
-        self.stack = []
-    # List append method to add element
+        self.queue = []
+
     def add(self, data):
-        if data not in self.stack:
-            self.stack.append(data)
+        if data not in self.queue:
+            self.queue.insert(0, data)
             return True
         else:
             return False
 
-    # List pop method to remove element
+    def size(self):
+        return len(self.queue)
+
+    def print_queue(self):
+        for i in self.queue:
+            print(i)
+
     def remove(self):
-        if len(self.stack) <= 0:
-            return "No elements in the stack"
-        else:
-            return self.stack.pop()
-
-    def peek(self):
-        return self.stack[-1]
+        if len(self.queue) > 0:
+            return self.queue.pop()
+        return "No elements in queue"
 
 
-new_stack = Stack()
-new_stack.add("Mon")
-new_stack.add("Tue")
-new_stack.add("Wed")
-new_stack.remove()
-print(new_stack.peek())
+new_queue = Queue()
+new_queue.add("Mon")
+new_queue.add("Tue")
+new_queue.add("Wed")
+new_queue.remove()
+new_queue.print_queue()

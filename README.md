@@ -1,5 +1,5 @@
 # Data structures and algorithms
 
-## Stacks
+## Queue
     -add mehod
     -remove method
